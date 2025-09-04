@@ -1,58 +1,86 @@
-# Mini‑SOC & Detection‑as‑Code (VinSOC Internship) — Starter Repo
-
-> ⚠️ **An toàn & đạo đức**: Mọi mô phỏng tấn công và phân tích **chỉ** thực hiện trong **lab nội bộ, cách ly mạng**. Tuyệt đối **không** dùng trên hạ tầng/thiết bị không thuộc quyền quản lý.
-
-## 1) Mục tiêu
-- Dựng SOC gọn nhẹ (Wazuh/Elastic + Zeek + Suricata + Sysmon).
-- Mô phỏng tấn công an toàn (Atomic Red Team & web attacks cảm hứng PortSwigger).
-- Viết luật phát hiện (Sigma/Suricata/YARA), làm DFIR mini‑case, enrichment IOC.
-- Tạo dashboard, báo cáo PDF, slide và video demo.
-
-## 2) Kiến trúc (SOC‑in‑a‑Box)
-```
-[Windows VM] --(Wazuh agent + Sysmon)--> [Wazuh Manager/Elastic/Kibana]
-        |                                     ^
-        |                                     |
-        |                   [Zeek/Suricata] --+
-        v
-[Linux Web VM: Nginx + DVWA] ---- logs ---> [Wazuh/Elastic]
-```
-
-## 3) Cách dựng nhanh
-```bash
-# 1) Khởi động Wazuh stack (Docker)
-cd infra
-docker compose up -d
-# UI: http://localhost:5601   (tạo tài khoản theo hướng dẫn trên màn hình)
-
-# 2) Cài Sysmon + Wazuh Agent (Windows)
-#   - Xem: agents/sysmon-config.xml, agents/wazuh-agent-notes.md
-
-# 3) Cài Zeek/Suricata + DVWA trên Linux, ship log về Elastic/Wazuh
-#   - Gợi ý: Filebeat/Wazuh Filebeat module
-```
-
-## 4) Simulations nhanh (lab an toàn)
-- **PowerShell Encoded**: tạo event Sysmon EID 1/3, alert Sigma.
-- **Service 7045**: tạo/xóa service hợp lệ để test persistence detection.
-- **Web SQLi/XSS**: DVWA mức thấp + Suricata rules.
-- Xem file: `simulations/run_scenarios.ps1` và `simulations/web_attacks_pswigger.md`.
-
-## 5) Detections
-- Sigma: `detections/sigma/*.yml`
-- Suricata: `detections/suricata/*.rules`
-- YARA: `detections/yara/*.yar`
-
-## 6) Dashboards & DFIR
-- Dashboards mẫu (ndjson placeholders) trong `dashboards/`.
-- DFIR timeline mẫu: `reports/dfir-timeline.csv`. Notebook: `notebooks/log_analysis.ipynb`.
-
-## 7) KPI & Checklist
-- Coverage ≥ 10 ATT&CK, 3 Sigma + 2 Suricata + 1 YARA, 3 dashboards.
-- MTTD (lab) < 1 phút; FP giảm ≥ 30–40% với threshold/suppression.
-- Trước khi nộp: README rõ ràng, ảnh dashboard/alerts, heatmap ATT&CK, video 5–7' và PDF.
+Tuyệt vời — dưới đây là **README tiếng Anh** đã được viết lại cho chuyên nghiệp (không có các dòng cảnh báo “nội bộ/đang thử nghiệm”), kèm theo **hướng dẫn Day 2 chi tiết** bằng tiếng Việt: danh sách file cần tạo/cập nhật và chuỗi commit mẫu theo Conventional Commits.
 
 ---
 
-### Nhật ký nhanh (khởi tạo)
-- Repo sinh tự động ngày **2025-09-04**. Hãy cập nhật **README** khi hoàn tất từng ngày trong lộ trình.
+## ✅ README.md (Professional, English)
+
+> Copy toàn bộ nội dung khối dưới đây vào `README.md`. Nhớ thay `ProjectName` và các mô tả cho đúng dự án của bạn.
+
+````markdown
+# ProjectName
+
+A concise, user‑facing tagline in one sentence that explains what ProjectName does.
+
+## Overview
+
+ProjectName is a [brief description: what it is, who it’s for, and the core value proposition].
+It helps [target users] accomplish [primary goals] with [key capabilities] in a reliable, maintainable way.
+
+## Key Features
+
+- Feature 1 — short benefit‑oriented line.
+- Feature 2 — short benefit‑oriented line.
+- Feature 3 — short benefit‑oriented line.
+
+## Quick Start
+
+1. **Clone the repository**
+   ```bash
+   git clone <repo-url>
+   cd <repo-directory>
+````
+
+2. **Set up your environment**
+
+   * Copy the example environment file and adjust values:
+
+     ```bash
+     cp .env.example .env
+     ```
+   * See **docs/QUICKSTART.md** for platform‑specific steps.
+
+3. **Run**
+
+   * Follow the run instructions in **docs/QUICKSTART.md**.
+
+## Documentation
+
+* **Quick Start:** [docs/QUICKSTART.md](docs/QUICKSTART.md)
+* **FAQ:** [docs/FAQ.md](docs/FAQ.md)
+* **Contributing:** [CONTRIBUTING.md](CONTRIBUTING.md)
+* **Security Policy:** [SECURITY.md](SECURITY.md)
+* **Changelog:** [CHANGELOG.md](CHANGELOG.md)
+
+## Project Structure
+
+```
+.
+├─ src/                      # Application / library source
+├─ tests/                    # Test suites
+├─ docs/                     # User & developer docs
+├─ .github/                  # Issue / PR templates and workflows
+├─ .editorconfig             # Consistent editor settings
+├─ .gitattributes            # Cross‑platform text normalization
+├─ .gitignore                # Ignore build artifacts & local files
+├─ CHANGELOG.md
+├─ CONTRIBUTING.md
+├─ LICENSE
+├─ README.md
+└─ SECURITY.md
+```
+
+## Versioning
+
+This project follows semantic versioning (SemVer). See **CHANGELOG.md** for release notes.
+
+## License
+
+Licensed under the MIT License. See **LICENSE** for details.
+
+## Contact
+
+* Maintainers: <team or name>
+* Issues & feature requests: please open a GitHub issue.
+
+````
+
