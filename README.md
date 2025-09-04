@@ -1,13 +1,4 @@
-Tuyệt vời — dưới đây là **README tiếng Anh** đã được viết lại cho chuyên nghiệp (không có các dòng cảnh báo “nội bộ/đang thử nghiệm”), kèm theo **hướng dẫn Day 2 chi tiết** bằng tiếng Việt: danh sách file cần tạo/cập nhật và chuỗi commit mẫu theo Conventional Commits.
-
----
-
-## ✅ README.md (Professional, English)
-
-> Copy toàn bộ nội dung khối dưới đây vào `README.md`. Nhớ thay `ProjectName` và các mô tả cho đúng dự án của bạn.
-
-````markdown
-# ProjectName
+# Mini-SOC
 
 A concise, user‑facing tagline in one sentence that explains what ProjectName does.
 
@@ -79,8 +70,6 @@ Licensed under the MIT License. See **LICENSE** for details.
 
 ## Contact
 
-* Maintainers: <team or name>
-* Issues & feature requests: please open a GitHub issue.
 
-````
+
 
