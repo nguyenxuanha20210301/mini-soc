@@ -1,0 +1,5 @@
+Hãy xem rule [tên] hiện bắn FP khi [bối cảnh]. 
+Đề xuất:
+- điều kiện bổ sung (parent process, working directory, cmdline length),
+- threshold/suppression cụ thể,
+- cách đo FP giảm bao nhiêu sau điều chỉnh (kịch bản kiểm chứng).

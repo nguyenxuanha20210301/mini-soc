@@ -1,0 +1,5 @@
+Hãy tạo file infra/docker-compose.yml cho Wazuh single node + dashboard + indexer tương thích (phiên bản ổn định), kèm hướng dẫn:
+- docker compose up -d
+- URL & tài khoản mặc định
+- cách kiểm tra container logs và health
+- network/volume tối thiểu

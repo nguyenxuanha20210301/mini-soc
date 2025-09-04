@@ -1,0 +1,25 @@
+title: Suspicious PowerShell EncodedCommand
+id: 8b8f9f5d-ps-enc
+status: experimental
+description: Detects PowerShell execution using -enc/-EncodedCommand with long base64 payloads
+logsource:
+  product: windows
+  service: sysmon
+  category: process_creation
+detection:
+  sel_img:
+    Image|endswith: '\\powershell.exe'
+  sel_args:
+    CommandLine|contains:
+      - '-enc'
+      - '-EncodedCommand'
+  condition: sel_img and sel_args
+fields:
+  - CommandLine
+  - ParentImage
+  - ParentCommandLine
+level: high
+tags:
+  - attack.t1059.001
+falsepositives:
+  - Admin scripts using encoded commands

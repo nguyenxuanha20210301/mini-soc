@@ -1,0 +1,6 @@
+Ngày [N] – Hãy đưa:
+1) 3–5 tasks cụ thể (ưu tiên nhất trước),
+2) khối lệnh/cấu hình cần chạy,
+3) tiêu chí “Done when …”,
+4) kiểm thử xác nhận (query/ảnh chụp cần thu),
+5) gợi ý commit messages.

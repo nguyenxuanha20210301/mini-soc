@@ -1,0 +1,2 @@
+Tạo outline 10–12 slide cho demo Mini‑SOC, mỗi slide 1–2 gạch đầu dòng. 
+Viết script nói 5–7 phút tương ứng (<= 900 từ), nhắc các điểm highlight & KPI.

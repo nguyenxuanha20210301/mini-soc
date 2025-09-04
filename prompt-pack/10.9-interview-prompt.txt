@@ -1,0 +1,3 @@
+Hãy đóng vai interviewer VinSOC (SOC/ANBM). 
+Hỏi mình 8–10 câu xoay quanh: telemetry, rule quality, FP handling, DFIR, web detection (PortSwigger), và câu hỏi tiếng Anh ngắn. 
+Sau mỗi câu mình trả lời, hãy chấm 1–5 và nhận xét cải thiện.

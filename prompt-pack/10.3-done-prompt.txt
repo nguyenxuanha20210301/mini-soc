@@ -1,0 +1,5 @@
+DONE: [mô tả task]. 
+Hãy:
+- xác nhận tiêu chí hoàn tất,
+- gợi ý bước kế tiếp,
+- sinh đoạn README/báo cáo (Markdown) mô tả việc mình vừa làm, gồm: mục tiêu, cách thực hiện, kết quả, hình ảnh cần chụp.

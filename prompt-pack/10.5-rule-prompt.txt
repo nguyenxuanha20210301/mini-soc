@@ -1,0 +1,5 @@
+Mình cần một Sigma rule phát hiện [mô tả hành vi], kèm:
+- logic, các trường log cần có, ATT&CK tags,
+- cách test (Atomic/PowerShell an toàn),
+- KQL tương đương để truy vấn kiểm chứng,
+- hướng dẫn import rule vào SIEM (Wazuh/Elastic).

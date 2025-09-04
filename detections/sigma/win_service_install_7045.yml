@@ -1,0 +1,13 @@
+title: New Service Installed (7045)
+id: 6c1a1b2a-svc-7045
+status: test
+logsource:
+  product: windows
+  service: system
+detection:
+  selection:
+    EventID: 7045
+  condition: selection
+level: medium
+tags:
+  - attack.persistence

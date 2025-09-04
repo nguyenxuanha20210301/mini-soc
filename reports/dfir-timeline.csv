@@ -1,0 +1,6 @@
+timestamp,source,event,details,ioc
+2025-09-04 10:15:03,Sysmon EID 1,ProcessCreate,powershell.exe -enc ...,
+2025-09-04 10:15:04,Sysmon EID 3,NetworkConnect,dst=198.51.100.25:443,198.51.100.25
+2025-09-04 10:15:09,Sysmon EID 10,ProcessAccess,TargetImage=lsass.exe,
+2025-09-04 10:15:12,WinEvt 7045,Service Install,ServiceName=LabSvc,LabSvc
+2025-09-04 10:16:00,Suricata,Alert,Signature=Possible XSS script tag,<script

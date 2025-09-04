@@ -1,0 +1,16 @@
+title: Suspicious LSASS Access
+id: 2a4f2b75-lsass-access
+status: experimental
+logsource:
+  product: windows
+  service: sysmon
+  category: process_access
+detection:
+  sel:
+    TargetImage|endswith: '\\lsass.exe'
+  condition: sel
+level: high
+tags:
+  - attack.t1003
+falsepositives:
+  - AV/EDR legitimate access

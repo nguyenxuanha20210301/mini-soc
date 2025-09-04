@@ -1,0 +1,2 @@
+Sinh timeline DFIR cho kịch bản [tên], dựa trên: EID 1, 3, 10, 7045 và log web nếu có. 
+Đầu ra: bảng 6–10 dòng (timestamp, source, event, details, IOC), phần RCA ngắn, khuyến nghị.

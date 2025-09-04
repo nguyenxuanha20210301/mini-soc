@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Sysmon schemaversion="4.90">
+  <!-- Minimal, lab-focused Sysmon config for Mini-SOC -->
+  <HashAlgorithms>sha256,md5</HashAlgorithms>
+  <EventFiltering>
+    <ProcessCreate onmatch="include">
+      <Image condition="end with">\powershell.exe</Image>
+      <Image condition="end with">\cmd.exe</Image>
+      <Image condition="end with">\wmic.exe</Image>
+    </ProcessCreate>
+
+    <NetworkConnect onmatch="include">
+      <Image condition="end with">\powershell.exe</Image>
+      <Image condition="end with">\cmd.exe</Image>
+      <DestinationIsIpv6 condition="is">false</DestinationIsIpv6>
+    </NetworkConnect>
+
+    <ProcessAccess onmatch="include">
+      <TargetImage condition="end with">\lsass.exe</TargetImage>
+    </ProcessAccess>
+
+    <DriverLoad onmatch="exclude">
+      <ImageLoaded condition="begin with">C:\Windows\System32\drivers\</ImageLoaded>
+    </DriverLoad>
+
+    <FileCreateTime onmatch="exclude">
+      <Image condition="end with">\svchost.exe</Image>
+    </FileCreateTime>
+
+    <ImageLoad onmatch="exclude">
+      <ImageLoaded condition="end with">\ntdll.dll</ImageLoaded>
+      <ImageLoaded condition="end with">\kernel32.dll</ImageLoaded>
+    </ImageLoad>
+  </EventFiltering>
+</Sysmon>
