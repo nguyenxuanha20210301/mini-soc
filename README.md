@@ -19,7 +19,7 @@ It helps [target users] accomplish [primary goals] with [key capabilities] in a 
    ```bash
    git clone <repo-url>
    cd <repo-directory>
-````
+        ````
 
 2. **Set up your environment**
 
